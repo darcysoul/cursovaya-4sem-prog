@@ -1,25 +1,34 @@
 import { Injectable } from '@nestjs/common';
-import {Client} from 'src/clients/client.entity';
-import { Package } from 'src/packages/package.entity';
-import { Department } from 'src/departments/department.entity';
+import { User } from 'src/user/user.entity';
+import { Shipment } from 'src/shipment/shipment.entity';
+import { Address } from 'src/address/address.entity';
+import { Mailbox } from 'src/mailbox/mailbox.entity';
 
 @Injectable()
 export class DatasourceService {
 
-  private clients: Client[] = [];
+  private users: User[] = [];
 
-  getClients(): Client[] {
-    return this.clients;
+  getUsers(): User[] {
+    return this.users;
   }
   
-  private packeges: Package[] = [];
+  private shipments: Shipment[] = [];
 
-  getPackages(): Package[] {
-    return this.packeges;
+  getShipments(): Shipment[] {
+    return this.shipments;
   }
-  private departments: Department[] = [];
 
-  getDepartments(): Department[] {
-    return this.departments;
+  private addresses: Address[] = [];
+
+  getAddress(): Address[] {
+    return this.addresses;
   }
+
+  private mailboxes: Mailbox[] = [];
+
+  getMailboxes(): Mailbox[] {
+    return this.mailboxes;
+  }
+
 }
